@@ -5,7 +5,10 @@ Version:	0.7.3
 Release:	2
 Group:		X11/Applications
 Group(de):	X11/Applikationen
+Group(es):	X11/Aplicaciones
 Group(pl):	X11/Aplikacje
+Group(pt_BR):	X11/Aplicações
+Group(pt):	X11/Aplicações
 License:	GPL
 URL:		http://wish.student.harvard.edu/kibble/
 Source0:	ftp://wish.student.harvard.edu/pub/kibble/packages/%{name}-%{version}.tar.bz2
