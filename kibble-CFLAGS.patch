@@ -1,0 +1,23 @@
+diff -Nru kibble-0.7.3/src/Makefile.am kibble-0.7.3.new/src/Makefile.am
+--- kibble-0.7.3/src/Makefile.am	Thu Mar 11 21:20:19 1999
++++ kibble-0.7.3.new/src/Makefile.am	Sat Mar 27 16:35:22 1999
+@@ -23,5 +23,4 @@
+ 	main_window.h \
+ 	view_dialog.h
+ 
+-CFLAGS = \
+-	-DLOCALEDIR=\""$(localedir)"\"
++CFLAGS = @CFLAGS@ -DLOCALEDIR=\""$(localedir)"\"
+diff -Nru kibble-0.7.3/src/Makefile.in kibble-0.7.3.new/src/Makefile.in
+--- kibble-0.7.3/src/Makefile.in	Thu Mar 11 21:20:19 1999
++++ kibble-0.7.3.new/src/Makefile.in	Sat Mar 27 16:35:54 1999
+@@ -112,8 +112,7 @@
+ 	main_window.h \
+ 	view_dialog.h
+ 
+-CFLAGS = \
+-	-DLOCALEDIR=\""$(localedir)"\"
++CFLAGS = @CFLAGS@ -DLOCALEDIR=\""$(localedir)"\"
+ mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
+ CONFIG_HEADER = config.h
+ CONFIG_CLEAN_FILES = 
