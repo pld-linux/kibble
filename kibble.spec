@@ -1,0 +1,49 @@
+Summary:     Kibble - a knowledge base program
+Name:        kibble
+Version:     0.7.1
+Release:     1
+Group:       X11/Applications
+Copyright:   GPL
+Source0:     ftp://wish.student.harvard.edu/pub/kibble/packages/%{name}-%{version}.tar.gz
+URL:         http://wish.student.harvard.edu/kibble/
+BuildRoot:   /tmp/%{name}-%{version}-root
+
+%description
+This is Kibble, a knowledge base program. It is used to organize seemingly
+discursive thoughts into a cohesive engine. Basically, it is used it to keep
+track of random ideas that may prove useful.
+
+%prep
+%setup -q
+
+%build
+CFLAGS="$RPM_OPT_FLAGS" LDFLAGS="-s" \
+./configure \
+	--prefix=/usr/X11R6
+make
+
+%install
+rm -rf $RPM_BUILD_ROOT
+install -d $RPM_BUILD_ROOT/etc/X11/wmconfig
+
+make install DESTDIR=$RPM_BUILD_ROOT
+
+cat > $RPM_BUILD_ROOT/etc/X11/wmconfig/kibble <<EOF
+xfig name "kibble"
+xfig description "Kibble - a knowledge base program"
+xfig group Applications
+xfig exec "/usr/X11R6/bin/kibble &"
+EOF
+
+%clean
+rm -rf $RPM_BUILD_ROOT
+
+%files
+%defattr(644, root, root, 755)
+/etc/X11/wmconfig/kibble
+%attr(755, root, root) /usr/X11R6/bin/kibble
+
+%changelog
+* Sat Dec 12 1998 Tomasz K³oczko <kloczek@rudy.mif.pg.gda.pl>
+  [0.7.1-1]
+- first release in rpm package.
