@@ -9,8 +9,8 @@ Copyright:	GPL
 URL:		http://wish.student.harvard.edu/kibble/
 Source:		ftp://wish.student.harvard.edu/pub/kibble/packages/%{name}-%{version}.tar.bz2
 Patch:		kibble-CFLAGS.patch
-BuildPrereq:	gtk+-devel >= 1.2.0
-BuildPrereq:	XFree86-devel
+BuildRequires:	gtk+-devel >= 1.2.0
+BuildRequires:	XFree86-devel
 BuildRoot:	/tmp/%{name}-%{version}-root
 
 %description
