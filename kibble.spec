@@ -11,7 +11,6 @@ Source0:	ftp://wish.student.harvard.edu/pub/kibble/packages/%{name}-%{version}.t
 Source1:	kibble.desktop
 Patch:		kibble-CFLAGS.patch
 BuildRequires:	gtk+-devel >= 1.2.0
-BuildRequires:	XFree86-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		_prefix		/usr/X11R6
