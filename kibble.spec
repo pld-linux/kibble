@@ -33,7 +33,7 @@ o którym by³ robiony ten program, jest przechowywanie informacji o pomys³ach.
 CFLAGS="$RPM_OPT_FLAGS" LDFLAGS="-s" \
 ./configure %{_target_platform} \
 	--prefix=%{_prefix}
-make
+%{__make}
 
 %install
 rm -rf $RPM_BUILD_ROOT
