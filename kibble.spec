@@ -4,11 +4,11 @@ Name:		kibble
 Version:	0.7.3
 Release:	2
 Group:		X11/Applications
-Group(p):	X11/Applikacje
+Group(pl):	X11/Aplikacje
 Copyright:	GPL
-Source0:	ftp://wish.student.harvard.edu/pub/kibble/packages/%{name}-%{version}.tar.bz2
-Patch:		kibble-CFLAGS.patch
 URL:		http://wish.student.harvard.edu/kibble/
+Source:		ftp://wish.student.harvard.edu/pub/kibble/packages/%{name}-%{version}.tar.bz2
+Patch:		kibble-CFLAGS.patch
 BuildPrereq:	gtk+-devel >= 1.2.0
 BuildPrereq:	XFree86-devel
 BuildRoot:	/tmp/%{name}-%{version}-root
@@ -20,8 +20,8 @@ track of random ideas that may prove useful.
 
 %description -l pl
 Kibble jest programem do organizowania podrêcznej bazy faktów,
-przechowywanych w hierarhicznym drezewku. Podstawowym zastosowaniem z mysl±
-o którym by³ robiony ten program jest przechowywanie informacji o pomys³ach.
+przechowywanych w hierarchicznym drzewku. Podstawowym zastosowaniem, z my¶l±
+o którym by³ robiony ten program, jest przechowywanie informacji o pomys³ach.
 
 %prep
 %setup -q
