@@ -12,7 +12,6 @@ Patch0:		%{name}-CFLAGS.patch
 BuildRequires:	gtk+-devel >= 1.2.0
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
-%define		_prefix		/usr/X11R6
 
 %description
 This is Kibble, a knowledge base program. It is used to organize
