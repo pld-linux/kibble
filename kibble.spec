@@ -29,7 +29,7 @@ o którym by³ robiony ten program, jest przechowywanie informacji o pomys³ach.
 
 %build
 CFLAGS="$RPM_OPT_FLAGS" LDFLAGS="-s" \
-./configure \
+./configure %{_target} \
 	--prefix=/usr/X11R6
 make
 
