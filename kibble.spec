@@ -1,17 +1,24 @@
-Summary:     Kibble - a knowledge base program
-Name:        kibble
-Version:     0.7.1
-Release:     1
-Group:       X11/Applications
-Copyright:   GPL
-Source0:     ftp://wish.student.harvard.edu/pub/kibble/packages/%{name}-%{version}.tar.gz
-URL:         http://wish.student.harvard.edu/kibble/
-BuildRoot:   /tmp/%{name}-%{version}-root
+Summary:	Kibble - a knowledge base program
+Summary(pl):	Kibble - podrêczna baza faktów
+Name:		kibble
+Version:	0.7.2
+Release:	1
+Group:		X11/Applications
+Group(p):	X11/Applikacje
+Copyright:	GPL
+Source0:	ftp://wish.student.harvard.edu/pub/kibble/packages/%{name}-%{version}.tar.bz2
+URL:		http://wish.student.harvard.edu/kibble/
+BuildRoot:	/tmp/%{name}-%{version}-root
 
 %description
 This is Kibble, a knowledge base program. It is used to organize seemingly
 discursive thoughts into a cohesive engine. Basically, it is used it to keep
 track of random ideas that may prove useful.
+
+%description -l pl
+Kibble jest programem do organizowania podrêcznej bazy faktów,
+przechowywanych w hierarhicznym drezewku. Podstawowym zastosowaniem z mysl±
+o którym by³ robiony ten program jest przechowywanie informacji o pomys³ach.
 
 %prep
 %setup -q
@@ -39,11 +46,15 @@ EOF
 rm -rf $RPM_BUILD_ROOT
 
 %files
-%defattr(644, root, root, 755)
+%defattr(644,root,root,755)
 /etc/X11/wmconfig/kibble
-%attr(755, root, root) /usr/X11R6/bin/kibble
+%attr(755,root,root) /usr/X11R6/bin/kibble
 
 %changelog
+* Thu Mar 11 1999 Tomasz K³oczko <kloczek@rudy.mif.pg.gda.pl>
+  [0.7.2-1]
+- added pl tranlations.
+
 * Sat Dec 12 1998 Tomasz K³oczko <kloczek@rudy.mif.pg.gda.pl>
   [0.7.1-1]
 - first release in rpm package.
