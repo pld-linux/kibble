@@ -7,6 +7,7 @@ Group:		X11/Applications
 License:	GPL
 URL:		http://wish.student.harvard.edu/kibble/
 Source0:	ftp://wish.student.harvard.edu/pub/kibble/packages/%{name}-%{version}.tar.bz2
+# Source0-md5:	eb479613e7124c46d7905a309cc98845
 Source1:	%{name}.desktop
 Patch0:		%{name}-CFLAGS.patch
 BuildRequires:	gtk+-devel >= 1.2.0
