@@ -7,11 +7,14 @@ Group:		X11/Applications
 Group(pl):	X11/Aplikacje
 Copyright:	GPL
 URL:		http://wish.student.harvard.edu/kibble/
-Source:		ftp://wish.student.harvard.edu/pub/kibble/packages/%{name}-%{version}.tar.bz2
+Source0:	ftp://wish.student.harvard.edu/pub/kibble/packages/%{name}-%{version}.tar.bz2
+Source1:	kibble.desktop
 Patch:		kibble-CFLAGS.patch
 BuildRequires:	gtk+-devel >= 1.2.0
 BuildRequires:	XFree86-devel
 BuildRoot:	/tmp/%{name}-%{version}-root
+
+%define		_prefix		/usr/X11R6
 
 %description
 This is Kibble, a knowledge base program. It is used to organize seemingly
@@ -30,26 +33,21 @@ o którym by³ robiony ten program, jest przechowywanie informacji o pomys³ach.
 %build
 CFLAGS="$RPM_OPT_FLAGS" LDFLAGS="-s" \
 ./configure %{_target_platform} \
-	--prefix=/usr/X11R6
+	--prefix=%{_prefix}
 make
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT/etc/X11/wmconfig
+install -d $RPM_BUILD_ROOT%{_datadir}/applnk/Utilities
 
 make install DESTDIR=$RPM_BUILD_ROOT
 
-cat > $RPM_BUILD_ROOT/etc/X11/wmconfig/kibble <<EOF
-xfig name "kibble"
-xfig description "Kibble - a knowledge base program"
-xfig group Applications
-xfig exec "/usr/X11R6/bin/kibble &"
-EOF
+install %{SOURCE1} $RPM_BUILD_ROOT%{_datadir}/applnk/Utilities
 
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-/etc/X11/wmconfig/kibble
-%attr(755,root,root) /usr/X11R6/bin/kibble
+%attr(755,root,root) %{_bindir}/kibble
+%{_datadir}/applnk/Utilities/kibble.desktop
