@@ -1,0 +1,7 @@
+[Desktop Entry]
+Name=kibble
+Comment=Knowledge base program
+Comment[pl]=Podrêczna baza faktów
+Exec=kibble
+Terminal=0
+Type=Application
