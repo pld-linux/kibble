@@ -2,14 +2,15 @@ Summary:	Kibble - a knowledge base program
 Summary(pl):	Kibble - podrêczna baza faktów
 Name:		kibble
 Version:	0.7.3
-Release:	1
+Release:	2
 Group:		X11/Applications
 Group(p):	X11/Applikacje
 Copyright:	GPL
 Source0:	ftp://wish.student.harvard.edu/pub/kibble/packages/%{name}-%{version}.tar.bz2
 Patch:		kibble-CFLAGS.patch
 URL:		http://wish.student.harvard.edu/kibble/
-Requires:	gtk+ = 1.2.1
+BuildPrereq:	gtk+-devel >= 1.2.0
+BuildPrereq:	XFree86-devel
 BuildRoot:	/tmp/%{name}-%{version}-root
 
 %description
@@ -54,6 +55,11 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) /usr/X11R6/bin/kibble
 
 %changelog
+* Sat Apr 24 1999 Tomasz K³oczko <kloczek@rudy.mif.pg.gda.pl>
+  [0.7.3-2]
+- added BuildPrereq
+- recompiles on new rpm.
+
 * Thu Mar 25 1999 Tomasz K³oczko <kloczek@rudy.mif.pg.gda.pl>
   [0.7.3-1]
 - added kibble-CFLAGS.patch (fix passing CFLAGS for autoconf).
