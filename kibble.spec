@@ -12,7 +12,7 @@ Source1:	kibble.desktop
 Patch:		kibble-CFLAGS.patch
 BuildRequires:	gtk+-devel >= 1.2.0
 BuildRequires:	XFree86-devel
-BuildRoot:	/tmp/%{name}-%{version}-root
+BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		_prefix		/usr/X11R6
 
