@@ -53,21 +53,3 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 /etc/X11/wmconfig/kibble
 %attr(755,root,root) /usr/X11R6/bin/kibble
-
-%changelog
-* Sat Apr 24 1999 Tomasz K這czko <kloczek@rudy.mif.pg.gda.pl>
-  [0.7.3-2]
-- added BuildPrereq
-- recompiles on new rpm.
-
-* Thu Mar 25 1999 Tomasz K這czko <kloczek@rudy.mif.pg.gda.pl>
-  [0.7.3-1]
-- added kibble-CFLAGS.patch (fix passing CFLAGS for autoconf).
-
-* Thu Mar 11 1999 Tomasz K這czko <kloczek@rudy.mif.pg.gda.pl>
-  [0.7.2-1]
-- added pl tranlations.
-
-* Sat Dec 12 1998 Tomasz K這czko <kloczek@rudy.mif.pg.gda.pl>
-  [0.7.1-1]
-- first release in rpm package.
