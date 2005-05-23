@@ -4,12 +4,12 @@ Name:		kibble
 Version:	0.7.3
 Release:	2
 Group:		X11/Applications
-License:	GPL
-URL:		http://wish.student.harvard.edu/kibble/
+License:	GPL v2
 Source0:	ftp://wish.student.harvard.edu/pub/kibble/packages/%{name}-%{version}.tar.bz2
 # Source0-md5:	eb479613e7124c46d7905a309cc98845
 Source1:	%{name}.desktop
 Patch0:		%{name}-CFLAGS.patch
+URL:		http://wish.student.harvard.edu/kibble/
 BuildRequires:	gtk+-devel >= 1.2.0
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -30,23 +30,26 @@ o pomys³ach.
 %patch -p1
 
 %build
-CFLAGS="%{rpmcflags}" LDFLAGS="%{rpmldflags}" \
+CFLAGS="%{rpmcflags}" \
+LDFLAGS="%{rpmldflags}" \
 ./configure %{_target_platform} \
 	--prefix=%{_prefix}
 %{__make}
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT%{_applnkdir}/Utilities
+install -d $RPM_BUILD_ROOT%{_desktopdir}
 
-%{__make} install DESTDIR=$RPM_BUILD_ROOT
+%{__make} install \
+	DESTDIR=$RPM_BUILD_ROOT
 
-install %{SOURCE1} $RPM_BUILD_ROOT%{_applnkdir}/Utilities
+install %{SOURCE1} $RPM_BUILD_ROOT%{_desktopdir}
 
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
+%doc AUTHORS ChangeLog NEWS README THANKS TODO
 %attr(755,root,root) %{_bindir}/kibble
-%{_applnkdir}/Utilities/kibble.desktop
+%{_desktopdir}/kibble.desktop
