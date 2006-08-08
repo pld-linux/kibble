@@ -27,7 +27,7 @@ o pomys³ach.
 
 %prep
 %setup -q
-%patch -p1
+%patch0 -p1
 
 %build
 CFLAGS="%{rpmcflags}" \
