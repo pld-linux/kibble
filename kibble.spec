@@ -1,5 +1,5 @@
 Summary:	Kibble - a knowledge base program
-Summary(pl):	Kibble - podrêczna baza faktów
+Summary(pl.UTF-8):   Kibble - podrÄ™czna baza faktÃ³w
 Name:		kibble
 Version:	0.7.3
 Release:	2
@@ -19,11 +19,11 @@ This is Kibble, a knowledge base program. It is used to organize
 seemingly discursive thoughts into a cohesive engine. Basically, it is
 used it to keep track of random ideas that may prove useful.
 
-%description -l pl
-Kibble jest programem do organizowania podrêcznej bazy faktów,
+%description -l pl.UTF-8
+Kibble jest programem do organizowania podrÄ™cznej bazy faktÃ³w,
 przechowywanych w hierarchicznym drzewku. Podstawowym zastosowaniem, z
-my¶l± o którym by³ robiony ten program, jest przechowywanie informacji
-o pomys³ach.
+myÅ›lÄ… o ktÃ³rym byÅ‚ robiony ten program, jest przechowywanie informacji
+o pomysÅ‚ach.
 
 %prep
 %setup -q
