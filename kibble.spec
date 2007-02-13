@@ -1,5 +1,5 @@
 Summary:	Kibble - a knowledge base program
-Summary(pl.UTF-8):   Kibble - podręczna baza faktów
+Summary(pl.UTF-8):	Kibble - podręczna baza faktów
 Name:		kibble
 Version:	0.7.3
 Release:	2
