@@ -5,5 +5,4 @@ Comment[pl]=Podręczna baza faktów
 Exec=kibble
 Terminal=false
 Type=Application
-Encoding=UTF-8
 # vi: encoding=utf-8
